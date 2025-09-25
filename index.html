@@ -84,19 +84,12 @@
 
     /* Testimoni */
     .testimoni-container {
-      height:250px; /* lebih tinggi supaya muat beberapa komentar */
-      overflow:hidden;
-      position:relative;
       margin:25px auto;
       max-width:500px;
       background-color:rgba(255,255,255,0.1);
       border-radius:10px;
-      padding:10px;
-    }
-    .testimoni {
-      display:block;
-      animation:scroll-up 60s linear infinite; /* lambat */
-      padding-top:240px; /* jeda awal supaya komentar ga langsung hilang */
+      padding:15px;
+      text-align:left;
     }
     .testimoni p {
       margin:10px 0;
@@ -107,10 +100,6 @@
     }
     .avatar {
       width:28px;height:28px;border-radius:50%;flex-shrink:0;
-    }
-    @keyframes scroll-up {
-      0%{transform:translateY(100%);}
-      100%{transform:translateY(-100%);}
     }
 
     /* Catatan saldo */
@@ -155,7 +144,7 @@
   <a href="https://hotheadvapor.com/register?referral=yowesvip" target="_blank" class="button button2">KLAIM BONUS MEMBER LAMA</a>
   <a href="https://hotheadvapor.com/register?referral=yowesvip" target="_blank" class="button button3">BUAT ID VIP GRATIS</a>
 
-  <!-- Testimoni dengan avatar otomatis -->
+  <!-- Testimoni statis -->
   <div class="testimoni-container">
     <div class="testimoni">
       <p><img src="https://ui-avatars.com/api/?name=Andi&background=random&rounded=true&size=32" class="avatar"> Andi: “Mantap bener saldo langsung masuk guys.”</p>
