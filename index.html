@@ -9,32 +9,18 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body {
       font-family:'Montserrat',sans-serif;
-      font-weight:700;
       background:url('gambar-background-merah.png') no-repeat center center fixed;
       background-size:cover;
       color:#fff;
       text-align:center;
       padding:15px;
     }
-
+    h1 {font-size:26px;margin-bottom:10px;}
     .logo {
       width:150px;height:auto;display:block;margin:20px auto;
     }
     .main-photo {
       width:80%;max-width:350px;height:auto;display:block;margin:15px auto;border-radius:12px;
-    }
-
-    h1 {font-size:28px;margin-bottom:10px;}
-    .bonus {
-      font-size:22px;
-      margin:10px 0;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:6px;
-    }
-    .icon-small {
-      width:24px;height:24px;border-radius:50%;vertical-align:middle;
     }
 
     /* Progress bar */
@@ -47,7 +33,7 @@
       overflow:hidden;
     }
     .progress-bar {
-      width:90%; /* kuota tinggal sedikit */
+      width:90%;
       background:linear-gradient(45deg,#ff1744,#b71c1c);
       height:20px;
       border-radius:20px;
@@ -82,27 +68,58 @@
       100%{transform:scale(1);}
     }
 
-    /* Testimoni */
+    /* Testimoni berjalan */
     .testimoni-container {
+      width:90%;
+      max-width:400px;
+      height:150px; /* 5 komentar tinggi kecil */
+      overflow:hidden;
       margin:25px auto;
-      max-width:500px;
       background-color:rgba(255,255,255,0.1);
       border-radius:10px;
-      padding:15px;
-      text-align:left;
+      padding:10px;
+      position:relative;
+    }
+    .testimoni {
+      position:absolute;
+      animation:scroll-up 15s linear infinite;
     }
     .testimoni p {
-      margin:10px 0;
-      font-size:14px;
+      margin:6px 0;
+      font-size:12px;
       display:flex;
       align-items:center;
       gap:6px;
     }
     .avatar {
-      width:28px;height:28px;border-radius:50%;flex-shrink:0;
+      width:24px;height:24px;border-radius:50%;flex-shrink:0;
+    }
+    @keyframes scroll-up {
+      0% {top:0;}
+      100% {top:-100%;}
     }
 
-    /* Catatan saldo */
+    /* Popup klaim */
+    .popup {
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      padding:10px 15px;
+      border-radius:8px;
+      font-size:13px;
+      display:none;
+      animation:fade-in-out 4s ease;
+      z-index:9999;
+    }
+    @keyframes fade-in-out {
+      0%{opacity:0;transform:translateY(20px);}
+      10%{opacity:1;transform:translateY(0);}
+      80%{opacity:1;}
+      100%{opacity:0;transform:translateY(20px);}
+    }
+
     .note {
       font-size:14px;
       margin-top:20px;
@@ -113,8 +130,7 @@
     }
 
     @media (max-width:480px){
-      h1{font-size:22px;}
-      .bonus{font-size:18px;}
+      h1{font-size:20px;}
       .button{padding:12px 18px;font-size:14px;}
     }
   </style>
@@ -123,19 +139,14 @@
 
   <!-- Logo -->
   <img src="logogue.gif" alt="Logo" class="logo">
-
   <h1>Klaim Bonus 20.000</h1>
-  <p class="bonus">
-    <img src="https://ui-avatars.com/api/?name=Bonus&background=FF1744&color=fff&rounded=true&size=28" class="icon-small">
-    Dapatkan Bonus Sekarang Juga
-  </p>
 
   <!-- Foto Utama -->
   <img src="yowesjp.png" alt="Foto Utama" class="main-photo">
 
   <!-- Progress Bar -->
   <div class="progress-container">
-    <div class="progress-bar">Kuota Tinggal 272 Lagi</div>
+    <div class="progress-bar">Kuota Tinggal 230 Lagi</div>
   </div>
   <div class="quota-text">Segera klaim sebelum kuota habis!</div>
 
@@ -144,29 +155,17 @@
   <a href="https://hotheadvapor.com/register?referral=yowesvip" target="_blank" class="button button2">KLAIM BONUS MEMBER LAMA</a>
   <a href="https://hotheadvapor.com/register?referral=yowesvip" target="_blank" class="button button3">BUAT ID VIP GRATIS</a>
 
-  <!-- Testimoni statis -->
+  <!-- Testimoni berjalan -->
   <div class="testimoni-container">
     <div class="testimoni">
-      <p><img src="https://ui-avatars.com/api/?name=Andi&background=random&rounded=true&size=32" class="avatar"> Andi: “Mantap bener saldo langsung masuk guys.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Siti&background=random&rounded=true&size=32" class="avatar"> Siti: “Aku udah coba, alhamdulillah cair cepet.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Budi&background=random&rounded=true&size=32" class="avatar"> Budi: “Baru klaim langsung dapet, rekomended banget.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Dewi&background=random&rounded=true&size=32" class="avatar"> Dewi: “Ga nyangka, tanpa depo tetep bisa WD 😍.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Rizky&background=random&rounded=true&size=32" class="avatar"> Rizky: “Skeptis awalnya, eh ternyata beneran.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Putri&background=random&rounded=true&size=32" class="avatar"> Putri: “Mantul! tinggal klik aja saldo nongol.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Bayu&background=random&rounded=true&size=32" class="avatar"> Bayu: “Aku udah klaim, tunggu 1×24 jam katanya.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Nisa&background=random&rounded=true&size=32" class="avatar"> Nisa: “Seriusan? aku udah terima, beneran guys.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Agus&background=random&rounded=true&size=32" class="avatar"> Agus: “Wkwk awalnya ragu, sekarang ketagihan.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Fajar&background=random&rounded=true&size=32" class="avatar"> Fajar: “Simple banget prosesnya, lancar jaya.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Ayu&background=random&rounded=true&size=32" class="avatar"> Ayu: “Ga ribet sama sekali, saldo nyampe cepet.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Yudha&background=random&rounded=true&size=32" class="avatar"> Yudha: “Baru klaim langsung ada notif masuk.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Rani&background=random&rounded=true&size=32" class="avatar"> Rani: “Aku cek tiap jam, makin semangat klaimnya.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Joko&background=random&rounded=true&size=32" class="avatar"> Joko: “Top abis, ga ada biaya tambahan.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Melati&background=random&rounded=true&size=32" class="avatar"> Melati: “Aku kira hoax ternyata cair nyata 😂.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Irwan&background=random&rounded=true&size=32" class="avatar"> Irwan: “Langsung cair ke Dana, mantap bro.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Salsa&background=random&rounded=true&size=32" class="avatar"> Salsa: “Klaimnya cepet banget, worth it banget.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Anton&background=random&rounded=true&size=32" class="avatar"> Anton: “Wah gokil, saldo udah nongol di rekening.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Dian&background=random&rounded=true&size=32" class="avatar"> Dian: “Aku rekomendasiin ke temen2, asli ini.”</p>
-      <p><img src="https://ui-avatars.com/api/?name=Fina&background=random&rounded=true&size=32" class="avatar"> Fina: “Beneran cair, ga ribet sama sekali 👍.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Andi&background=random&rounded=true&size=24" class="avatar"> Andi: “Mantap saldo langsung masuk.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Siti&background=random&rounded=true&size=24" class="avatar"> Siti: “Aku udah coba cair cepet.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Budi&background=random&rounded=true&size=24" class="avatar"> Budi: “Baru klaim langsung dapet.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Dewi&background=random&rounded=true&size=24" class="avatar"> Dewi: “Ga nyangka tanpa depo bisa WD.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Rizky&background=random&rounded=true&size=24" class="avatar"> Rizky: “Skeptis awalnya eh beneran.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Putri&background=random&rounded=true&size=24" class="avatar"> Putri: “Mantul tinggal klik saldo nongol.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Bayu&background=random&rounded=true&size=24" class="avatar"> Bayu: “Aku udah klaim tunggu 1×24 jam.”</p>
+      <p><img src="https://ui-avatars.com/api/?name=Nisa&background=random&rounded=true&size=24" class="avatar"> Nisa: “Seriusan aku udah terima.”</p>
     </div>
   </div>
 
@@ -174,6 +173,23 @@
   <div class="note">
     Saldo otomatis masuk jika kuota belum terpenuhi atau tunggu 1×24 jam. Cek akun secara berkala.
   </div>
+
+  <!-- Popup klaim -->
+  <div class="popup" id="popup"></div>
+
+  <script>
+    // Popup klaim acak
+    const names = ["Ali","Siti","Budi","Dewi","Rizky","Putri","Bayu","Nisa","Agus","Fajar","Ayu"];
+    const popup = document.getElementById('popup');
+
+    function showPopup(){
+      const randomName = names[Math.floor(Math.random()*names.length)];
+      popup.textContent = randomName + " sukses klaim bonus 20.000";
+      popup.style.display='block';
+      setTimeout(()=>{popup.style.display='none';},4000);
+    }
+    setInterval(showPopup,8000); // setiap 8 detik tampil
+  </script>
 
 </body>
 </html>
